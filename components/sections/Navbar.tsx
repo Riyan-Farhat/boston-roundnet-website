@@ -9,7 +9,7 @@ type NavItem = { label: string; href: string };
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const isHero = pathname === "/";
 
   const nav: NavItem[] = useMemo(
     () => [
@@ -27,21 +27,28 @@ export default function Navbar() {
 
   return (
     // border-b-1 border-gray-300
-    <header className="sticky top-0 p-5">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 scale-115">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 scale-115 ${
+          isHero ? "text-white" : "text-[#0B275E]"
+        }`}
+      >
         {/* Left: Brand */}
         <div className="flex items-center gap-3 scale-125">
           <Link
             href="/"
             className="flex items-center gap-2 rounded-xl px-2 py-1 focus:outline-none focus:ring-0"
-            onClick={() => setOpen(false)}
           >
             {/* Simple mark (swap for your logo later) */}
-            <Image src="/logo.png" alt="logo" width={30} height={30} priority />
+            <Image
+              src="/br-logo.png"
+              alt="br-logo"
+              width={30}
+              height={30}
+              priority
+            />
             <div className="leading-tight">
-              <div className="text-sm font-bold text-[#0B275E]">
-                Boston Roundnet
-              </div>
+              <div className="text-sm font-bold">Boston Roundnet</div>
             </div>
           </Link>
         </div>
@@ -55,8 +62,8 @@ export default function Navbar() {
               className={[
                 "rounded-xl px-3 py-2 text-sm font-medium transition",
                 isActive(item.href)
-                  ? "bg-gray-100 text-[#0B275E]"
-                  : "text-slate-700 hover:bg-gray-100 hover:text-[#0B275E]",
+                  ? "bg-gray-100"
+                  : "hover:bg-gray-100 hover:text-[#0B275E]",
               ].join(" ")}
             >
               {item.label}
@@ -73,7 +80,7 @@ export default function Navbar() {
             <span>Join Discord</span>
             <Image
               src="/discord-logo.png"
-              alt="Discord"
+              alt="discord-logo"
               width={20}
               height={20}
               priority
@@ -82,7 +89,7 @@ export default function Navbar() {
 
           <Link
             href="/membership"
-            className="inline-flex items-center justify-center rounded-xl bg-[#EA850E] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#EA850E]/40"
+            className="inline-flex items-center justify-center rounded-xl bg-custom-gold px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#EA850E]/40"
           >
             Become a member
           </Link>
