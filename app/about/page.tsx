@@ -196,19 +196,19 @@ export default function AboutPage() {
 
           {/* Goals */}
           <CardSection id="goals" title="Club goals">
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {goals.map((g) => (
-                <li
+                <ul
                   key={g}
                   className="rounded-2xl border border-slate-200 bg-white p-4 text-slate-700 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 inline-block h-2 w-2 rounded-full bg-slate-900" />
+                    <span className="mt-3 inline-block h-2 w-2 scale-75 rounded-full bg-slate-900" />
                     <span className="leading-7">{g}</span>
                   </div>
-                </li>
+                </ul>
               ))}
-            </ul>
+            </div>
           </CardSection>
 
           {/* Initiatives */}

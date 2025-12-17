@@ -56,7 +56,7 @@ export default function Navbar() {
                   {item.name}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] grid-cols-3 gap-4 p-4">
+                  <ul className="grid w-[400px] grid-cols-2 gap-4 p-4">
                     {item.subLinks.map((subLink) => (
                       <li key={subLink.name}>
                         <NavigationMenuLink asChild>

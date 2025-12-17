@@ -15,27 +15,27 @@ const socials: Social[] = [
     name: "Instagram",
     description:
       "Photos, reels, and stories from events, tournaments, and club life.",
-    href: "https://instagram.com/yourhandle",
+    href: "https://www.instagram.com/boston_roundnet/",
     cta: "Follow on Instagram",
   },
   {
     name: "Discord",
     description:
       "Our primary hub for announcements, scheduling, weather updates, and community chat.",
-    href: "https://discord.gg/yourinvite",
+    href: "https://discord.gg/Rjdc9fD6",
     cta: "Join Discord",
   },
   {
     name: "YouTube",
     description:
       "Match footage, highlights, clinics, and special event recaps.",
-    href: "https://youtube.com/@yourchannel",
+    href: "https://www.youtube.com/@BostonRoundnet/videos",
     cta: "Subscribe on YouTube",
   },
   {
     name: "Facebook",
     description: "Event posts and updates for members who prefer Facebook.",
-    href: "https://facebook.com/yourpage",
+    href: "https://www.facebook.com/groups/698589690316199/",
     cta: "Visit Facebook Page",
   },
 ];

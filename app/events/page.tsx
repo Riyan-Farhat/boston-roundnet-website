@@ -202,81 +202,16 @@ export default function EventsPage() {
       <section className="mx-auto max-w-5xl px-6 pb-20">
         <div className="space-y-12">
           {/* Schedule */}
-          <CardSection id="schedule" title="Schedule">
-            <div className="flex flex-col gap-4">
-              {upcomingSchedule.map((e) => (
-                <div
-                  key={`${e.title}-${e.date}-${e.time}`}
-                  className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
-                >
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <div className="text-base font-semibold text-slate-900">
-                          {e.title}
-                        </div>
-                        {e.level ? <Badge label={e.level} /> : null}
-                        {e.status ? <StatusBadge status={e.status} /> : null}
-                      </div>
+          <div className="mx-auto max-w-6xl px-4 py-12">
+            <h1 className="mb-6 text-4xl font-bold">Events</h1>
 
-                      <div className="mt-2 text-sm text-slate-600">
-                        <span className="font-medium text-slate-900">
-                          {e.date}
-                        </span>{" "}
-                        • {e.time}
-                      </div>
-                      <div className="mt-1 text-sm text-slate-600">
-                        {e.location}
-                      </div>
-
-                      {e.description ? (
-                        <p className="mt-3 text-sm leading-6 text-slate-600">
-                          {e.description}
-                        </p>
-                      ) : null}
-                    </div>
-
-                    <div className="shrink-0">
-                      <a
-                        href={e.href ?? "/events"}
-                        className="inline-flex w-full items-center justify-center rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800 sm:w-auto"
-                      >
-                        View / RSVP
-                      </a>
-                      <p className="mt-2 text-center text-xs text-slate-500 sm:text-left">
-                        Details + location notes
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <div className="text-base font-semibold text-slate-900">
-                  Want reminders?
-                </div>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Announcements and last-minute changes are posted in Discord.
-                  If you’re attending, check the day-of post for weather and
-                  field updates.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <a
-                    href="/community"
-                    className="inline-flex items-center justify-center rounded-2xl bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100"
-                  >
-                    Join Discord
-                  </a>
-                  <a
-                    href="/membership"
-                    className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-transparent px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-white"
-                  >
-                    Membership
-                  </a>
-                </div>
-              </div>
+            <div className="relative w-full overflow-hidden rounded-xl border shadow">
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=cf3a388c07c11f05909d945fa9cef13cbc810684082f31b119b81fa781b6862f%40group.calendar.google.com&ctz=America%2FNew_York"
+                className="h-[600px] w-full"
+              />
             </div>
-          </CardSection>
+          </div>
 
           {/* Announcements */}
           <CardSection id="announcements" title="Announcements">
