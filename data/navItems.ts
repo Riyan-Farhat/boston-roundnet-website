@@ -88,22 +88,22 @@ export const navItems = [
     subLinks: [
       {
         name: "Instagram",
-        link: "https://instagram.com",
+        link: "/socials#instagram",
         description: "Photos, highlights, and updates.",
       },
       {
         name: "Discord",
-        link: "https://discord.gg",
+        link: "/socials#discord",
         description: "Join the community and chat with members.",
       },
       {
         name: "YouTube",
-        link: "https://youtube.com",
+        link: "/socials#youtube",
         description: "Match footage and club videos.",
       },
       {
         name: "Facebook",
-        link: "https://facebook.com",
+        link: "/socials#facebook",
         description: "Events and announcements on Facebook.",
       },
     ],

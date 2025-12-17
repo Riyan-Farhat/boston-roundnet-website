@@ -20,13 +20,14 @@ export default function Navbar() {
   const isHero = pathname === "/";
 
   return (
-    // border-b-1 border-gray-300
-    <header className="fixed top-5 left-0 right-0 z-50">
-      <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 scale-120 ${
-          isHero ? "text-white" : "text-[#0B275E]"
-        }`}
-      >
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 p-5 ${
+        isHero
+          ? "text-white"
+          : "text-[#0B275E] bg-white border-b-1 border-gray-200"
+      }`}
+    >
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 scale-120 ">
         {/* Left: Brand */}
         <div className="flex items-center gap-3 scale-125">
           <Link
