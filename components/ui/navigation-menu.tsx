@@ -60,7 +60,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium rounded-md outline-none transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1",
+  "h-10 px-5 text-base font-lg group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium rounded-md outline-none transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1",
   {
     variants: {
       variant: {

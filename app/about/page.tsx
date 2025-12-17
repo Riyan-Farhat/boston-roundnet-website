@@ -359,7 +359,7 @@ export default function AboutPage() {
                 Membership
               </a>
               <a
-                href="/community"
+                href="https://discord.gg/Rjdc9fD6"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/15"
               >
                 Join Discord

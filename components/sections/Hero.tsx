@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative flex min-h-screen items-center justify-center px-4 opacity-95"
+      className="relative flex min-h-screen items-center justify-center px-4 py-16 sm:py-20"
       style={{
         backgroundImage: "url('/br-team.jpg')",
         backgroundSize: "cover",
@@ -22,56 +22,63 @@ const Hero = () => {
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/35" />
 
       {/* Blue gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/50 opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/50 opacity-60" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center items-center">
-        <div className="flex flex-row items-center gap-x-10 text-left">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
+        {/* Logo + Title */}
+        <div className="flex w-full flex-col items-center gap-6 text-center lg:flex-row lg:items-center lg:gap-10 lg:text-left">
           <Image
             src="/br-logo.png"
             alt="br-logo"
-            width={200}
-            height={20}
+            width={160}
+            height={160}
             priority
+            className="h-auto w-28 sm:w-36 lg:w-[200px]"
           />
-          <div
-            className={`${dmSans.className} text-7xl leading-tight text-white`}
+
+          <h1
+            className={`${dmSans.className} text-4xl sm:text-5xl lg:text-7xl leading-tight text-white`}
           >
             A Home for{" "}
-            <span className="inline-block w-[10ch] whitespace-nowrap text-left">
+            <span className="inline-block w-[10ch] whitespace-nowrap align-baseline">
               <FlipWords words={words} />
             </span>
             <br />
             Roundnet Players
-          </div>
+          </h1>
         </div>
-        <div>
-          <div className="mt-6 text-xs md:text-lg lg:text-xl text-slate-200">
+
+        {/* Subtext + Buttons */}
+        <div className="mt-8 flex w-full flex-col items-center text-center lg:items-start lg:text-left lg:ml-120">
+          <p className="max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl text-slate-200">
             A community of individuals passionate about playing roundnet and
             having fun!
-          </div>
+          </p>
 
-          <div className="mt-10 flex gap-4 justify-center">
+          <div className="mt-8 flex w-full max-w-xs sm:max-w-xl flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <Link
               href="/about"
-              className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-custom-navy transition hover:brightness-95"
+              className="inline-flex w-full sm:w-auto justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-custom-navy transition hover:brightness-95"
             >
               How the club works
             </Link>
 
             <Link
               href="/about#organizers"
-              className="rounded-xl bg-custom-navy px-6 py-3 text-sm font-semibold text-white hover:text-gray-200"
+              className="inline-flex w-full sm:w-auto justify-center rounded-xl bg-custom-navy px-6 py-3 text-sm font-semibold text-white transition hover:text-gray-200"
             >
               Meet the organizers
             </Link>
           </div>
         </div>
       </div>
-      <div className="fixed bottom-0 right-0 text-white">
+
+      {/* Footer credit */}
+      <div className="pointer-events-none absolute bottom-3 right-3 text-xs sm:text-sm text-white/80">
         Created by Riyan Farhat 🙂
       </div>
     </section>
