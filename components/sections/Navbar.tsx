@@ -2,28 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
 import Image from "next/image";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { navItems } from "@/data/navItems";
 
 type NavItem = { label: string; href: string };
 
 export default function Navbar() {
   const pathname = usePathname();
   const isHero = pathname === "/";
-
-  const nav: NavItem[] = useMemo(
-    () => [
-      { label: "About", href: "/about" },
-      { label: "Socials", href: "/socials" },
-      { label: "Announcements", href: "/announcements" },
-      { label: "Calendar", href: "/calendar" },
-      { label: "FAQ", href: "/faq" },
-    ],
-    []
-  );
-
-  const isActive = (href: string) =>
-    pathname === href || (href !== "/" && pathname?.startsWith(href));
 
   return (
     // border-b-1 border-gray-300
@@ -53,23 +47,38 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Center: Desktop links */}
-        <div className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={[
-                "rounded-xl px-3 py-2 text-sm font-medium transition",
-                isActive(item.href)
-                  ? "bg-gray-100"
-                  : "hover:bg-gray-100 hover:text-[#0B275E]",
-              ].join(" ")}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
+        <NavigationMenu>
+          <NavigationMenuList>
+            {navItems.map((item) => (
+              <NavigationMenuItem key={item.name}>
+                <NavigationMenuTrigger href={item.link}>
+                  {item.name}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] grid-cols-3 gap-4 p-4">
+                    {item.subLinks.map((subLink) => (
+                      <li key={subLink.name}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={subLink.link}
+                            className="block space-y-1 rounded-md p-3 hover:bg-accent"
+                          >
+                            <div className="font-medium leading-none">
+                              {subLink.name}
+                            </div>
+                            <p className="text-xs text-muted-foreground">
+                              {subLink.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-2">

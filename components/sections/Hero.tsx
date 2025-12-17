@@ -63,7 +63,7 @@ const Hero = () => {
             </Link>
 
             <Link
-              href="/members"
+              href="/about#organizers"
               className="rounded-xl bg-custom-navy px-6 py-3 text-sm font-semibold text-white hover:text-gray-200"
             >
               Meet the organizers
