@@ -50,11 +50,8 @@ const Hero = () => {
         </div>
         <div>
           <div className="mt-6 text-xs md:text-lg lg:text-xl text-slate-200">
-            A season-long, community-driven club built around{" "}
-            <div className="font-semibold text-white inline">
-              consistent play, structured competition, and collective
-              improvement.
-            </div>
+            A community of individuals passionate about playing roundnet and
+            having fun!
           </div>
 
           <div className="mt-10 flex gap-4 justify-center">
@@ -69,10 +66,13 @@ const Hero = () => {
               href="/members"
               className="rounded-xl bg-custom-navy px-6 py-3 text-sm font-semibold text-white hover:text-gray-200"
             >
-              Meet the team members
+              Meet the organizers
             </Link>
           </div>
         </div>
+      </div>
+      <div className="fixed bottom-0 right-0 text-white">
+        Created by Riyan Farhat 🙂
       </div>
     </section>
   );
