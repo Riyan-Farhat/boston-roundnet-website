@@ -215,73 +215,33 @@ export default function EventsPage() {
 
           {/* Announcements */}
           <CardSection id="announcements" title="Announcements">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {announcements.map((a) => (
-                <div
-                  key={`${a.title}-${a.date}`}
-                  className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <div className="text-base font-semibold text-slate-900">
-                          {a.title}
-                        </div>
-                        {a.tag ? <Badge label={a.tag} /> : null}
-                      </div>
-                      <div className="mt-2 text-sm text-slate-500">
-                        {a.date}
-                      </div>
-                    </div>
-                    {a.href ? (
-                      <a
-                        href={a.href}
-                        className="shrink-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
-                      >
-                        Open →
-                      </a>
-                    ) : null}
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    {a.body}
-                  </p>
-                </div>
-              ))}
+            <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+              <div className="text-lg font-semibold text-slate-900">
+                Announcements coming soon
+              </div>
+              <p className="mt-2 max-w-xl mx-auto text-sm leading-6 text-slate-600">
+                Important updates, registration notices, and weather-related
+                information will be posted here once the season begins.
+              </p>
+              <div className="mt-4 inline-block rounded-full bg-slate-200 px-4 py-1.5 text-sm font-medium text-slate-700">
+                TBD
+              </div>
             </div>
           </CardSection>
 
           {/* Club events */}
           <CardSection id="club-events" title="Club events">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {clubEvents.map((c) => (
-                <div
-                  key={c.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
-                >
-                  <div className="text-base font-semibold text-slate-900">
-                    {c.title}
-                  </div>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {c.description}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                    {c.bullets.map((b) => (
-                      <li key={b} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-400" />
-                        <span className="leading-6">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-5">
-                    <a
-                      href={c.href ?? "/events"}
-                      className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-                    >
-                      Learn more →
-                    </a>
-                  </div>
-                </div>
-              ))}
+            <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+              <div className="text-lg font-semibold text-slate-900">
+                Club event formats coming soon
+              </div>
+              <p className="mt-2 max-w-xl mx-auto text-sm leading-6 text-slate-600">
+                Details on open play, leagues, clinics, and tournaments will be
+                announced once formats, schedules, and locations are finalized.
+              </p>
+              <div className="mt-4 inline-block rounded-full bg-slate-200 px-4 py-1.5 text-sm font-medium text-slate-700">
+                TBD
+              </div>
             </div>
           </CardSection>
 
@@ -326,20 +286,17 @@ export default function EventsPage() {
                       <th className="px-6 py-3">Last played</th>
                     </tr>
                   </thead>
+
                   <tbody className="divide-y divide-slate-200">
-                    {rankings.map((r) => (
-                      <tr key={r.rank} className="hover:bg-slate-50">
+                    {[1, 2, 3, 4, 5].map((rank) => (
+                      <tr key={rank}>
                         <td className="px-6 py-4 font-semibold text-slate-900">
-                          {r.rank}
+                          {rank}
                         </td>
-                        <td className="px-6 py-4 text-slate-900">{r.name}</td>
-                        <td className="px-6 py-4 text-slate-700">{r.points}</td>
-                        <td className="px-6 py-4 text-slate-700">
-                          {r.tournaments}
-                        </td>
-                        <td className="px-6 py-4 text-slate-700">
-                          {r.lastPlayed}
-                        </td>
+                        <td className="px-6 py-4 text-slate-400">—</td>
+                        <td className="px-6 py-4 text-slate-400">—</td>
+                        <td className="px-6 py-4 text-slate-400">—</td>
+                        <td className="px-6 py-4 text-slate-400">—</td>
                       </tr>
                     ))}
                   </tbody>

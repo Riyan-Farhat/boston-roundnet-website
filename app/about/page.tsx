@@ -57,31 +57,13 @@ const initiatives: { title: string; description: string }[] = [
   },
 ];
 
-const organizers: Person[] = [
-  {
-    name: "Your Name",
-    role: "President / Founder",
-    bio: "Short bio about what you do and why you help run the club.",
-    links: [
-      { label: "Email", href: "mailto:hello@yourclub.com" },
-      { label: "Instagram", href: "https://instagram.com" },
-    ],
-  },
-  {
-    name: "Organizer Two",
-    role: "Events Lead",
-    bio: "Runs logistics, scheduling, and event execution.",
-  },
-  {
-    name: "Organizer Three",
-    role: "Community & Outreach",
-    bio: "Welcomes new members, partnerships, and volunteer coordination.",
-  },
-  {
-    name: "Organizer Four",
-    role: "Finance & Operations",
-    bio: "Handles budgeting, reimbursements, and transparency reporting.",
-  },
+const organizers = [
+  "Evan Liao",
+  "Michael Yung",
+  "Jason McGrath",
+  "Manish Nagireddy",
+  "Liliko Uchida",
+  "Michael Rascati",
 ];
 
 const finances: FinanceItem[] = [
@@ -158,9 +140,9 @@ export default function AboutPage() {
           {/* Quick nav */}
           <div className="flex flex-wrap gap-2">
             <JumpPill href="#general" label="General" />
+            <JumpPill href="#organizers" label="Organizers" />
             <JumpPill href="#goals" label="Club goals" />
             <JumpPill href="#initiatives" label="Initiatives" />
-            <JumpPill href="#organizers" label="Organizers" />
             <JumpPill href="#finances" label="Finances" />
             <JumpPill href="#faq" label="FAQ" />
           </div>
@@ -191,6 +173,22 @@ export default function AboutPage() {
                 Everyone. We aim to make it easy to show up, meet people, and
                 level up.
               </p>
+            </div>
+          </CardSection>
+
+          {/* Organizers */}
+          <CardSection id="organizers" title="Organizers">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {organizers.map((name) => (
+                <div
+                  key={name}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                >
+                  <div className="text-base font-semibold text-slate-900">
+                    {name}
+                  </div>
+                </div>
+              ))}
             </div>
           </CardSection>
 
@@ -225,55 +223,6 @@ export default function AboutPage() {
                   <p className="mt-2 text-sm leading-6 text-slate-600">
                     {it.description}
                   </p>
-                </div>
-              ))}
-            </div>
-          </CardSection>
-
-          {/* Organizers */}
-          <CardSection id="organizers" title="Organizers">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {organizers.map((p) => (
-                <div
-                  key={p.name}
-                  className="rounded-2xl border border-slate-200 bg-white p-5"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="text-base font-semibold text-slate-900">
-                        {p.name}
-                      </div>
-                      <div className="mt-1 text-sm font-medium text-slate-600">
-                        {p.role}
-                      </div>
-                    </div>
-                  </div>
-
-                  {p.bio ? (
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
-                      {p.bio}
-                    </p>
-                  ) : null}
-
-                  {p.links?.length ? (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {p.links.map((l) => (
-                        <a
-                          key={l.href}
-                          href={l.href}
-                          target={
-                            l.href.startsWith("http") ? "_blank" : undefined
-                          }
-                          rel={
-                            l.href.startsWith("http") ? "noreferrer" : undefined
-                          }
-                          className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-100"
-                        >
-                          {l.label}
-                        </a>
-                      ))}
-                    </div>
-                  ) : null}
                 </div>
               ))}
             </div>

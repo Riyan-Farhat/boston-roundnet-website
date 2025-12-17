@@ -30,36 +30,22 @@ const clubName = "Boston Roundnet"; // <-- change me
 
 const tiers: Tier[] = [
   {
-    name: "Community Member",
-    price: "$30",
+    name: "Membership",
+    price: "$TBD",
     cadence: "per season",
     description:
-      "Best for most players who want access, discounts, and community support.",
+      "Membership helps us run consistent events, keep costs accessible, maintain equipment, and grow the community.",
     perks: [
       "Member-only Discord role & updates",
       "Discounted entry to leagues & select events",
       "Priority access / early registration (when applicable)",
       "Eligibility for member raffles and giveaways",
       "Supports equipment, permits, and club operations",
-    ],
-    ctaLabel: "Become a Member",
-    ctaHref: "/join", // <-- link to your signup / checkout
-    highlight: true,
-  },
-  {
-    name: "Supporter",
-    price: "$75",
-    cadence: "per season",
-    description:
-      "For people who want to help fund growth and make events more accessible.",
-    perks: [
-      "Everything in Community Member",
-      "Supporter badge (optional) on Discord",
-      "One free or discounted clinic / event (when offered)",
       "Helps subsidize beginner programs and community initiatives",
     ],
-    ctaLabel: "Become a Supporter",
+    ctaLabel: "Become a Member",
     ctaHref: "/join",
+    highlight: true,
   },
 ];
 
@@ -144,7 +130,7 @@ export default function MembershipPage() {
         <div className="space-y-12">
           {/* Membership perks */}
           <CardSection id="perks" title="Membership perks">
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4">
               {tiers.map((t) => (
                 <div
                   key={t.name}
@@ -252,63 +238,21 @@ export default function MembershipPage() {
           {/* Merch */}
           <CardSection id="merch" title="Merch">
             <p className="text-sm leading-6 text-slate-600">
-              Merch purchases directly support the club. If you’re not ready for
-              membership, merch is an easy way to contribute.
+              We’re working on club merch for the upcoming season. Check back
+              soon.
             </p>
 
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              {merch.map((m) => (
-                <a
-                  key={m.name}
-                  href={m.href}
-                  className="group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:bg-slate-50"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="text-base font-semibold text-slate-900">
-                        {m.name}
-                      </div>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">
-                        {m.description}
-                      </p>
-                    </div>
-                    <div className="flex flex-col items-end gap-2">
-                      {m.tag ? (
-                        <span className="rounded-full border border-slate-200 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600">
-                          {m.tag}
-                        </span>
-                      ) : null}
-                      {m.price ? (
-                        <span className="text-sm font-semibold text-slate-900">
-                          {m.price}
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div className="mt-4 text-sm font-semibold text-slate-900">
-                    Shop merch{" "}
-                    <span className="inline-block transition group-hover:translate-x-0.5">
-                      →
-                    </span>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="/merch"
-                className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
-              >
-                Browse Merch
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-              >
-                Bulk / sponsor orders
-              </a>
+            <div className="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+              <div className="text-lg font-semibold text-slate-900">
+                Merch Coming Soon
+              </div>
+              <p className="mt-2 text-sm text-slate-600">
+                Apparel and accessories will be announced once designs and
+                vendors are finalized.
+              </p>
+              <div className="mt-4 inline-block rounded-full bg-slate-200 px-4 py-1.5 text-sm font-medium text-slate-700">
+                Pricing & availability TBD
+              </div>
             </div>
           </CardSection>
 
