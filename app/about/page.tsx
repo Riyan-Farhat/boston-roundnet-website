@@ -1,5 +1,6 @@
 // app/about/page.tsx
 import React from "react";
+import Image from "next/image";
 
 type Person = {
   name: string;
@@ -58,15 +59,40 @@ const initiatives: { title: string; description: string }[] = [
 ];
 
 const organizers = [
-  "Jason McGrath",
-  "Manish Nagireddy",
-  "Michael Yung",
-  "Michael Rascati",
-  "Evan Liao",
-  "Liliko Uchida",
-  "Lia Maag",
-  "Rosy Lin"
+  {
+    name: "Jason McGrath",
+    image: "/organizers/jason-mcgrath.png",
+  },
+  {
+    name: "Manish Nagireddy",
+    image: "/organizers/manish-nagireddy.png",
+  },
+  {
+    name: "Michael Yung",
+    image: "/organizers/michael-yung.png",
+  },
+  {
+    name: "Michael Rascati",
+    image: "/organizers/michael-rascati.png",
+  },
+  {
+    name: "Evan Liao",
+    image: "/organizers/evan-liao.png",
+  },
+  {
+    name: "Liliko Uchida",
+    image: "/organizers/liliko-uchida.png",
+  },
+  {
+    name: "Lia Maag",
+    image: "/organizers/lia-maag.png",
+  },
+  {
+    name: "Rosy Lin",
+    image: "/organizers/rosy-lin.png",
+  },
 ];
+
 
 const finances: FinanceItem[] = [
   {
@@ -181,12 +207,21 @@ export default function AboutPage() {
           {/* Organizers */}
           <CardSection id="organizers" title="Organizers">
             <div className="grid gap-4 sm:grid-cols-2">
-              {organizers.map((name) => (
+              {organizers.map(({ name, image }) => (
                 <div
                   key={name}
-                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                  className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center"
                 >
-                  <div className="text-base font-semibold text-slate-900">
+                  <div className="relative h-20 w-20 overflow-hidden rounded-full bg-slate-100">
+                    <Image
+                      src={image}
+                      alt={name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="mt-3 text-base font-semibold text-slate-900">
                     {name}
                   </div>
                 </div>
