@@ -58,12 +58,14 @@ const initiatives: { title: string; description: string }[] = [
 ];
 
 const organizers = [
-  "Evan Liao",
-  "Michael Yung",
   "Jason McGrath",
   "Manish Nagireddy",
-  "Liliko Uchida",
+  "Michael Yung",
   "Michael Rascati",
+  "Evan Liao",
+  "Liliko Uchida",
+  "Lia Maag",
+  "Rosy Lin"
 ];
 
 const finances: FinanceItem[] = [
