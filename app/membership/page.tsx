@@ -30,20 +30,36 @@ const clubName = "Boston Roundnet"; // <-- change me
 
 const tiers: Tier[] = [
   {
-    name: "Membership",
-    price: "$TBD",
-    cadence: "per season",
+    name: "Monthly",
+    price: "$30",
+    cadence: "per month",
     description:
-      "Membership helps us run consistent events, keep costs accessible, maintain equipment, and grow the community.",
+      "Flexible option for players who want to try the club or can’t commit to the full season.",
     perks: [
-      "Member-only Discord role & updates",
-      "Discounted entry to leagues & select events",
-      "Priority access / early registration (when applicable)",
-      "Eligibility for member raffles and giveaways",
-      "Supports equipment, permits, and club operations",
-      "Helps subsidize beginner programs and community initiatives",
+      "Access to club events during active month",
+      "Eligible for ranked play and club tournaments",
+      "Season ranking points earned while active",
+      "Private club Discord access",
     ],
-    ctaLabel: "Become a Member",
+    ctaLabel: "Join monthly",
+    ctaHref: "/join",
+    highlight: false,
+  },
+  {
+    name: "Full Season",
+    price: "$100",
+    cadence: "for the season",
+    description:
+      "Best value for committed players. Full access to the club, rankings, and tournaments all season long.",
+    perks: [
+      "Access to all club events: ranked play, trainings, pickups, and tournaments",
+      "Free entry to all club-hosted tournaments",
+      "Season-long individual ranking and standings",
+      "2 Atlas balls included (yours to keep)",
+      "Eligibility for end-of-season awards and prizes",
+      "Private club Discord access",
+    ],
+    ctaLabel: "Join for the season",
     ctaHref: "/join",
     highlight: true,
   },
@@ -130,7 +146,7 @@ export default function MembershipPage() {
         <div className="space-y-12">
           {/* Membership perks */}
           <CardSection id="perks" title="Membership perks">
-            <div className="grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
               {tiers.map((t) => (
                 <div
                   key={t.name}
@@ -198,7 +214,7 @@ export default function MembershipPage() {
                     ))}
                   </ul>
 
-                  <div className="mt-6">
+                  <div className="mt-auto pt-6">
                     <a
                       href={t.ctaHref}
                       className={[
@@ -216,8 +232,8 @@ export default function MembershipPage() {
                         t.highlight ? "text-white/70" : "text-slate-500",
                       ].join(" ")}
                     >
-                      Note: perks may vary by season/event availability. We’ll
-                      always communicate changes clearly.
+                      Note: perks may vary by season/event availability. We’ll always communicate
+                      changes clearly.
                     </p>
                   </div>
                 </div>

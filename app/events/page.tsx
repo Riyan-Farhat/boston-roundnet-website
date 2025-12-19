@@ -253,10 +253,10 @@ export default function EventsPage() {
                   <div className="text-base font-semibold text-slate-900">
                     Club rankings
                   </div>
-                  <p className="mt-1 text-sm text-slate-600">
+                  {/* <p className="mt-1 text-sm text-slate-600">
                     Example table—swap in your real logic later (ELO, points,
                     league standings, etc.).
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="flex flex-wrap gap-2">
