@@ -15,7 +15,6 @@ import { navItems } from "@/data/navItems";
 import {
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,

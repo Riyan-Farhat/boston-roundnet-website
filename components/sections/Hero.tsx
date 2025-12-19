@@ -1,4 +1,3 @@
-import React from "react";
 import { FlipWords } from "../ui/flip-words";
 import { DM_Sans } from "next/font/google";
 import Link from "next/link";
