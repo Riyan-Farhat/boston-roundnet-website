@@ -89,7 +89,8 @@ const organizers = [
   },
   {
     name: "Rosy Lin",
-    image: "/organizers/rosy-lin.png",
+    // image: "/organizers/rosy-lin.png",
+    image: "/organizers/temp-profile-pic.png",
   },
 ];
 
