@@ -228,7 +228,7 @@ export default function EventsPage() {
               </div>
             </div>
           </CardSection>
-
+          
           {/* Club events */}
           <CardSection id="club-events" title="Club events">
             <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">

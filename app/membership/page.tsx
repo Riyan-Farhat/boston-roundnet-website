@@ -99,23 +99,23 @@ const merch: MerchItem[] = [
 const donationOptions: DonationOption[] = [
   {
     amount: "$10",
-    description: "Helps cover cones, tape, and small supplies.",
-    href: "/donate",
+    description: "Helps cover cones, spray, and small supplies.",
+    href: "https://venmo.com/u/jasonmcgrath",
   },
   {
     amount: "$25",
     description: "Offsets one player’s discounted entry (when offered).",
-    href: "/donate",
+    href: "https://venmo.com/u/jasonmcgrath",
   },
   {
     amount: "$50",
     description: "Contributes to equipment upgrades or replacements.",
-    href: "/donate",
+    href: "https://venmo.com/u/jasonmcgrath",
   },
   {
     amount: "$100",
     description: "Supports permits, venue fees, and clinic programming.",
-    href: "/donate",
+    href: "https://venmo.com/u/jasonmcgrath",
   },
 ];
 
